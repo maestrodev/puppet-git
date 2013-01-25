@@ -1,7 +1,6 @@
 # Puppet control module for git
 
-This module provides a few resources for the [git](http://git-scm.com/) source
-control management system.
+This module provides a few resources for the [git](http://git-scm.com/) source control management system.
 
 ## Quickstart
 
@@ -15,6 +14,5 @@ If you need to manage the `.gitconfig` of a user:
       user => 'foo',
     }
 
-Please examine the manifest and resource definitions for more details. They are thoroughly
-documented.
+Please examine the manifest and resource definitions for more details. They are thoroughly documented.
 
