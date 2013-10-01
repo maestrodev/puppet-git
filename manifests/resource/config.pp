@@ -12,11 +12,10 @@
 #   *realname* - The user's 'real' name. Default USER
 #
 define git::resource::config($ensure=file, $root="/home/$user", $user, $group=$user, $email="$user@$fqdn", $realname=$user) {
-  file { "$root/.gitconfig":
+  file { "${root}/.gitconfig":
     ensure => $ensure,
     owner => $user,
     group => $group,
     content => template('git/gitconfig.erb'),
-    require => [File[$root], User[$user]],
   }
 }
