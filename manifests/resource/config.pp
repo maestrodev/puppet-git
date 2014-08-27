@@ -6,7 +6,6 @@
 #
 #   *user*     - The user in question. Defaults to title.
 #  [*ensure*]  - Set or destroy the .gitconfig file. (present|absent)
-#  [*root*]    - The root directory in which to place .gitconfig. Default /home/USER.
 #  [*group*]   - The user's primary group. Default USER.
 #  [*email*]   - The user's email address. Default USER@FQDN
 #   *realname* - The user's 'real' name. Default USER
