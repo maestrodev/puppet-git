@@ -16,14 +16,14 @@ define git::resource::config(
   $user     = $title,
   $ensure   = file,
   $group    = $user,
-  $email    = "${user}@${fqdn}",
+  $email    = "${user}@${::fqdn}",
   $realname = $user,
   $root     = "/home/${title}"
 ) {
   file { "${root}/.gitconfig":
-    ensure => $ensure,
-    owner => $user,
-    group => $group,
+    ensure  => $ensure,
+    owner   => $user,
+    group   => $group,
     content => template('git/gitconfig.erb'),
   }
 }
