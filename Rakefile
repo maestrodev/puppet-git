@@ -12,5 +12,6 @@ require 'puppet-lint/tasks/puppet-lint'
 PuppetLint.configuration.send("disable_80chars")
 PuppetLint.configuration.fail_on_warnings = true
 PuppetLint.configuration.relative = true
+PuppetLint.configuration.ignore_paths = ["vendor/**/*.pp"]
 
 task :default => [:clean, :lint, :spec]
