@@ -4,14 +4,22 @@
 #
 # Parameters
 #
+#   *user*     - The user in question. Defaults to title.
 #  [*ensure*]  - Set or destroy the .gitconfig file. (present|absent)
 #  [*root*]    - The root directory in which to place .gitconfig. Default /home/USER.
-#   *user*     - The user in question.
 #  [*group*]   - The user's primary group. Default USER.
 #  [*email*]   - The user's email address. Default USER@FQDN
 #   *realname* - The user's 'real' name. Default USER
+#  [*root*]    - The root directory in which to place .gitconfig. Default /home/USER.
 #
-define git::resource::config($ensure=file, $root="/home/$user", $user, $group=$user, $email="$user@$fqdn", $realname=$user) {
+define git::resource::config(
+  $user     = $title,
+  $ensure   = file,
+  $group    = $user,
+  $email    = "${user}@${fqdn}",
+  $realname = $user,
+  $root     = "/home/${title}"
+) {
   file { "${root}/.gitconfig":
     ensure => $ensure,
     owner => $user,
