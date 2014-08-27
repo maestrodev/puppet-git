@@ -1,5 +1,5 @@
 name 'maestrodev-git'
-version '1.0.5'
+version '1.0.6'
 
 author 'maestrodev'
 license 'Apache License, Version 2.0'
